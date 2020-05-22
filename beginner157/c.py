@@ -1,33 +1,72 @@
-n,m = list(map(int,input().split()))
-
-sc = []
-for i in range(m):
-  sc.append(int(input().replace(' ','')))
-
-sc1 = []
-sc2 = []
-sc3 = []
-
+n,m = map(int,input().split())
 
 if m==0:
   print(0)
+  exit()
+
+s = []
+c = []
+for i in range(m):
+  sc = input().replace(' ','')
+  s.append(int(sc[-2]))
+  c.append(int(sc[-1]))
+
+s1 = []
+s2 = []
+s3 = []
+c1 = []
+c2 = []
+c3 = []
+for i in range(m):
+  if s[i] == 1 and not s1:
+    s1.append(s[i])
+    c1.append(c[i])
+  elif s[i] == 1 and s1 and c[i] == c1[0]:
+    next
+  elif s[i] == 1 and s1 and c[i] != c1[0]:
+    print(-1)
+    exit()
+  elif s[i] == 2 and not s2:
+    s2.append(s[i])
+    c2.append(c[i])
+  elif s[i] == 2 and s2 and c[i] == c2[0]:
+    next
+  elif s[i] == 2 and s2 and c[i] != c2[0]:
+    print(-1)
+    exit()
+  elif s[i] == 3 and not s3:
+    s3.append(s[i])
+    c3.append(c[i])
+  elif s[i] == 3 and s3 and c[i] == c3[0]:
+    next
+  elif s[i] == 3 and s3 and c[i] != c3[0]:
+    print(-1)
+    exit()
+ans = 0
+if c1[0]==0:
+  print(-1)
+  exit()
+elif not c1:
+  next
 else:
+  ans+=c1[0]*100
 
-  for i in range(m):
-    if (int(str(sc[i])[-2]) == 1 and (not sc1 or sc[i] in sc1)) and int(str(sc[i])[-1]) == 0:
-      sc1.append(sc[i])
-    elif int(str(sc[i])[-2]) == 2 and sc[i] not in sc2:
-      sc2.append(sc[i])
-    elif int(str(sc[i])[-2]) == 3 and not sc3 or sc[i] in sc3:
-      sc3.append(sc[i])
-    else:
-      print(-1)
+if not c2:
+  next
+else:
+  ans+=c2[0]*10
 
-# if not sc1:
-#   sc1 = range(10)
-# else:
-#   next
-print(sc1)
+if not c3:
+  next
+else:
+  ans+=c3[0]
+
+print(ans)
+
   
+
+
+
+
 
 
