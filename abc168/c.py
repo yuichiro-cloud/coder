@@ -5,7 +5,7 @@ a,b,h,m = map(int,input().split())
 if 30*h == 6*m:
   print(0)
 elif 30*h > 6*m:
-  rad = 30*h - 6*m
+  rad = 30*h - 6*m  # 時針が１時間ごとにしか動かないから、ng
 else:
   rad = 6*m - 30*h
 
