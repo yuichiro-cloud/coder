@@ -1,10 +1,16 @@
-import numpy as np
 n = int(input())
-
 a = list(map(int,input().split()))
-np_a = np.array(a)
-ans = np.prod(np_a)
-if ans > 10**18:
-  print('-1')
+
+seki = 1
+if 0 in a:
+  print(0)
 else:
-  print(int(ans))
+
+  for i in range(n):
+    seki*=a[i]
+    if seki > 10**18:
+      break
+  if seki > 10**18:
+    print('-1')
+  else:
+    print(seki)
