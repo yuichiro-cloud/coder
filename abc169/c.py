@@ -1,4 +1,6 @@
-import math
-a,b = map(float,input().split())
+a,b = map(str, input().split())
 a = int(a)
-print(int(math.floor(a*b)))
+b = int(b.replace('.',''))
+print(a*b//100)
+
+
