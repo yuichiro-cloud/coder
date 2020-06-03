@@ -1,8 +1,7 @@
 n = int(input())
 p = []
 n2 = n
-# for i in range(2,int(n2**0.5//1 + 1)):
-for i in range(2,n):
+for i in range(2,int(n2**0.5//1 + 1)):
   index = 0
   while n2%i == 0:
     index+=1
@@ -13,6 +12,11 @@ for i in range(2,n):
     continue
 count = 0
 t = 1
+
+if n2 == 1:
+  next
+else:
+  count+=1
 
 if n == 1:
   print(0)
