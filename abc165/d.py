@@ -1,6 +1,9 @@
 a,b,n = map(int,input().split())
-ans = []
+ans = 0
 
 for x in range(n+1):
-  ans.append(a*x//b - a*(x//b))
-print(max(ans))
+  if a*x//b - a*(x//b) > ans:
+    ans = a*x//b - a*(x//b)
+  # ans.append(a*x//b - a*(x//b))
+# print(max(ans))
+print(ans)
