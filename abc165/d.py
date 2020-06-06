@@ -4,6 +4,6 @@ ans = 0
 for x in range(n+1):
   if a*x//b - a*(x//b) > ans:
     ans = a*x//b - a*(x//b)
-  # ans.append(a*x//b - a*(x//b))
-# print(max(ans))
 print(ans)
+
+
