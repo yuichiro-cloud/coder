@@ -1,9 +1,11 @@
 n,b,r = map(int,input().split())
 
-s_b = ['b']*b
-s_r = ['r']*r
-l = []
-for i in range(1000):
-  l+=(s_b + s_r)
+x = n//(b+r)
+x1 = n%(b+r)
 
-print(l[0:n].count('b'))
+if b >= x1:
+  b_count = x1
+else:
+  b_count = b
+
+print(x*b + b_count)
